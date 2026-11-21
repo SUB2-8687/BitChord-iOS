@@ -1,0 +1,349 @@
+# Reviewed Korean translations for entries that apply-korean.py would otherwise leave in English.
+# key<TAB>value. Escape sequences such as \n stay as written, like the English entries. Applied last, so it also covers
+# keys created by apply-korean.py and entries the first pass skipped (format specifiers must match English).
+activity_competing	대회 참가 중
+activity_dialog_message	위에 표시되는 동사입니다.
+activity_name_message	프로필에서 동사 뒤에 이어지는 문구입니다. 비워두면 %1$@을(를) 사용합니다.
+add_addon_detail	직접 운영하거나 링크를 받은 추가 음원 서버를 BitChord에 연결합니다
+app_icon_liquid_glass_clear	리퀴드 글래스 투명
+app_icon_liquid_glass_clear_dark	리퀴드 글래스 투명 다크
+app_icon_liquid_glass_dark	리퀴드 글래스 다크
+audio_output_playing	여기에서 재생 중
+audio_quality_connection	%1$@ 연결 시
+auto_empty_liked_subtitle	곡의 하트를 눌러 이곳에 저장하세요
+auto_empty_liked_title	좋아요 표시한 곡 없음
+auto_empty_offline_subtitle	휴대폰에서 곡을 다운로드하면 이곳에서 들을 수 있습니다
+auto_empty_offline_title	오프라인 곡 없음
+auto_empty_playlists_subtitle	연결 상태를 확인한 뒤 다시 시도하세요
+auto_empty_playlists_title	사용 가능한 플레이리스트 없음
+auto_empty_quick_picks_subtitle	연결 상태를 확인한 뒤 다시 시도하세요
+auto_empty_quick_picks_title	추천 곡 없음
+auto_empty_recents_subtitle	재생한 곡이 이곳에 표시됩니다
+auto_empty_recents_title	최근 재생한 곡 없음
+auto_login_subtitle	휴대폰에서 BitChord를 열어 로그인하세요
+auto_login_title	휴대폰에서 YouTube에 로그인하세요
+auto_unavailable_subtitle	폴더를 다시 열고 다시 시도하세요
+auto_unavailable_title	콘텐츠를 사용할 수 없음
+automix_analysis_status	자동 믹스 · 현재 곡: %1$@ · 다음 곡: %2$@
+automix_not_supported_video	동영상 곡에서는 자동 믹스를 지원하지 않습니다
+automix_performance_warning	고성능 분석은 곡을 더 빠르게 분석하지만 배터리를 더 많이 사용하고 기기가 더 뜨거워질 수 있습니다.
+automix_stopped_in_party	자동 믹스: 함께 듣기 중에는 중지됩니다
+autoplay_empty_description	비슷한 음악이 계속 재생됩니다
+autoplay_queue_description	다음에 재생할 비슷한 음악을 골랐습니다
+back_in_future_version	향후 버전에서 다시 제공됩니다
+biggest_day_note	가장 많이 들은 날은 %1$@, 총 %2$@ 감상했습니다.
+card_plays_format	재생 %1$@회
+card_songs_format	%1$@곡
+card_views_format	조회수 %1$@회
+channel_count	%1$lld채널
+channel_session_unavailable	이 페이지에 아직 세션이 없습니다. 먼저 YouTube Music을 여세요
+channel_switch_instructions	아바타로 전환한 뒤 “이 채널 사용”을 누르세요
+counted_on_device_with_bitchord	BitChord로 이 기기에서 집계한 기록입니다
+customize_card_subtitle	상태, 문구, 두 버튼
+default_replay_holder	BitChord 리스너
+delete_download_confirmation	이 기기에서 “%1$@”을(를) 삭제할까요? 확인하려면 한 번 더 누르세요.
+delete_playlist_confirmation	“%1$@”을(를) 삭제할까요? 확인하려면 한 번 더 누르세요.
+different_albums	서로 다른 앨범
+discord_button_variables	{song_name}, {artist_name}, {album_name}은(는) 현재 재생 중인 곡 정보로 바뀝니다.
+discord_buttons_footer	{song_name}, {artist_name}, {album_name}은(는) 곡 정보로 바뀝니다. 첫 번째 버튼은 YouTube Music에서 곡을 열고, 두 번째 버튼은 이 프로젝트를 엽니다.
+discord_presence_footer	곡, 재생 위치 또는 재생 상태가 바뀌면 카드가 갱신되고, 재생이 멈추면 카드가 지워집니다.
+discord_sign_in_footer	로그인하면 Discord 로그인 페이지가 열립니다. BitChord에는 아무것도 입력하지 않습니다.
+discord_token_description	Discord 계정 토큰을 붙여넣으세요. 토큰은 이 기기에 암호화되어 저장되며 Discord로만 전송됩니다.
+discord_token_rejected	Discord에서 해당 토큰을 거부했습니다.
+discord_token_warning	Discord는 앱이 내 활동 상태를 설정할 수 있는 API를 제공하지 않으므로, 이 기능은 내 계정으로 로그인해 Discord의 프로토콜을 사용합니다. 토큰은 이 기기에 암호화되어 저장되며 Discord로만 전송됩니다. 토큰은 계정 전체에 대한 접근 권한을 부여하며, 계정 자동화는 Discord 약관에 위배됩니다. 이 위험을 감수하는 경우에만 사용하세요.
+dolby_atmos_open_failed	Dolby Atmos 설정을 열 수 없습니다
+downgraded_from	↓ %1$@에서
+download_channel_description	음악 폴더에 저장 중인 곡
+download_channel_name	다운로드
+download_notification_queued	%1$@ · %2$lld개 대기 중
+download_notification_starting	시작 중
+download_notification_title	다운로드 중
+download_quality_dialog_subtitle	이 기기에 보관하는 파일에 적용됩니다
+download_waiting_count	%1$lld개 대기 중
+downloading_progress	다운로드 중 · %1$lld%%
+downloading_song_count	%1$lld곡 다운로드 중
+downloads_failed_count	다운로드 · %1$lld개 실패
+downloads_progress	다운로드 · %1$lld%%
+enable_high_performance_confirmation	BitChord의 배터리 사용량이 “제한 없음”으로 설정된 경우에만 켜세요. 기기가 뜨겁거나 배터리가 부족하면 화면 주사율이 제한될 수 있습니다.
+enable_high_performance_title	고성능 모드를 켤까요?
+enter_token_instead_subtitle	로그인 페이지가 열리지 않을 때 사용하세요
+equalizer_balance_footer	한쪽 소리를 줄여 반대쪽으로 소리를 치우치게 합니다.
+equalizer_bands_footer	대역을 움직이면 프리셋에서 벗어나 직접 설정한 곡선이 됩니다.
+equalizer_bitstream_footer	이퀄라이저는 디코딩된 오디오에서 동작합니다. 이 곡은 기기가 직접 디코딩하도록 비트스트림으로 전달되므로 필터를 적용할 샘플이 없습니다.
+equalizer_bitstream_subtitle	이 곡은 디코딩되지 않은 상태로 출력됩니다
+equalizer_bitstream_title	지금은 작동하지 않음
+equalizer_broad_footer	왼쪽으로 끌면 따뜻한 소리, 오른쪽으로 끌면 밝은 소리가 되며, 아래로 끌면 중간 대역이 줄고 위로 끌면 앞으로 도드라집니다. 넓게는 넓은 주파수 구간을 한 번에 조절합니다.
+equalizer_focused_footer	왼쪽으로 끌면 따뜻한 소리, 오른쪽으로 끌면 밝은 소리가 되며, 아래로 끌면 중간 대역이 줄고 위로 끌면 앞으로 도드라집니다. 세밀하게는 좁은 구간을 조절하므로 주변 대역에 주는 영향이 적습니다.
+equalizer_footer	시스템으로 보내기 전에 BitChord 안에서 음색을 조절합니다.
+export_compatible_downloads	호환 가능한 다운로드 내보내기
+export_failed	내보내기 실패: %1$@
+export_succeeded	설정과 %1$@을(를) 내보냈습니다
+genres_pending	감상 기록이 쌓이면 장르가 표시됩니다
+high_performance_active	%1$lld Hz를 요청했습니다. 필요하면 시스템이 낮출 수 있습니다.
+high_performance_battery_warning	먼저 BitChord의 배터리 사용량을 “제한 없음”으로 설정하세요. 주사율이 높으면 배터리, CPU, GPU를 더 많이 사용하고 기기가 따뜻해질 수 있습니다.
+high_performance_before_enabling	켜기 전에
+high_performance_mode	고성능 모드
+high_performance_subtitle	모든 애니메이션과 블러를 사용하고 더 높은 화면 주사율을 요청합니다
+hour_am	오전 %1$lld시
+hour_pm	오후 %1$lld시
+hours_minutes_short	%1$lld시간 %2$lld분
+import_failed	가져오기 실패: %1$@
+import_succeeded	v%2$@에서 %1$@을(를) 가져왔습니다
+jiosaavn_mismatch_warning	곡의 다른 버전과 잘못 연결될 수 있습니다. 위험을 감수하고 사용하세요.
+lastfm_login_description	Last.fm 계정으로 로그인해 감상 기록 연동을 사용합니다.
+lastfm_now_playing_subtitle	지금 듣고 있는 곡을 Last.fm에 업데이트합니다
+lead_with_song_subtitle	굵은 줄에 아티스트 대신 곡 제목을 표시합니다
+liquid_glass_subtitle	플로팅 탐색 막대에 실제 굴절 유리 효과를 적용합니다. Android 12 이상 전용이며 GPU를 더 많이 사용합니다.
+liquid_glass_unavailable	Android 12 이상이 필요합니다
+listen_most_around	%1$@ 무렵에 가장 많이 들어요.
+listen_together_activity_added	대기 목록에 추가
+listen_together_activity_changed_size	모임 인원 변경
+listen_together_activity_cleared	예정된 곡 비움
+listen_together_activity_footer	이번 세션만 · 최신순 · 최대 100개
+listen_together_activity_paused	재생 일시정지
+listen_together_activity_played	재생 시작
+listen_together_activity_removed_member	참여자 내보냄
+listen_together_activity_removed_track	대기 중인 곡 삭제
+listen_together_activity_reordered	대기 목록 순서 변경
+listen_together_activity_seeked	재생 위치 이동
+listen_together_activity_skipped	다음 곡으로 건너뜀
+listen_together_activity_updated	모임 정보 수정
+listen_together_activity_went_back	이전 곡으로 이동
+listen_together_away	자리 비움 — 자리는 유지됩니다
+listen_together_code_footer	소리 내어 읽어주거나 전송하세요. 영문 O와 I는 사용하지 않으므로 “오”로 읽히는 문자는 항상 숫자 0입니다.
+listen_together_code_hint	영문자 또는 숫자 6자리
+listen_together_create_footer	6자리 코드가 발급됩니다. 코드를 아는 사람은 누구나 내 기기를 포함해 최대 %1$lld대까지 참여할 수 있습니다.
+listen_together_create_sheet_subtitle	표시 방식과 참여 인원을 선택하세요.
+listen_together_create_subtitle	친구들과 공유할 코드를 받으세요
+listen_together_custom_server_connected	사용자 지정 서버에 연결됨
+listen_together_custom_server_dialog_message	이 모임은 외부 서버에서 운영됩니다:\n\n%1$@\n\n모임 서버를 전환하고 모임 %2$@에 참여할까요?
+listen_together_custom_server_footer	비워두면 기본 서버를 사용합니다. 직접 서버를 운영하는 경우 모임의 모든 참여자가 같은 서버를 사용하도록 설정해야 합니다.
+listen_together_custom_server_saved	사용자 지정 서버를 저장했습니다
+listen_together_custom_server_switch_and_join	전환 후 참여
+listen_together_custom_server_unreachable_fallback	사용자 지정 서버에 연결할 수 없어 기본 서버를 사용합니다.
+listen_together_err_invalid_path	서버 주소의 경로가 올바르지 않습니다
+listen_together_err_invalid_port	서버 포트는 1~65535 사이여야 합니다
+listen_together_err_no_fragment	서버 주소에는 프래그먼트를 포함할 수 없습니다
+listen_together_err_no_path	서버 주소에는 경로를 포함할 수 없습니다
+listen_together_err_no_query	서버 주소에는 쿼리 매개변수를 포함할 수 없습니다
+listen_together_err_whitespace	서버 주소에는 공백을 넣을 수 없습니다
+listen_together_host_only_notice	호스트만 음악을 조작할 수 있습니다
+listen_together_host_only_subtitle	다른 참여자는 함께 듣고, 자신의 기기에서 일시정지할 수 있습니다
+listen_together_invalid_server_url	서버 주소가 올바르지 않습니다. 올바른 주소를 입력하세요(예: https://your-server.com).
+listen_together_jam	%1$@님의 잼
+listen_together_jam_unnamed	함께 듣기
+listen_together_join_existing	기존 모임 참여
+listen_together_join_question	%1$@님의 모임에 참여할까요?
+listen_together_join_question_unnamed	이 모임에 참여할까요?
+listen_together_landing_subtitle	음악은 함께 들을 때 더 좋으니까요. 어디에 있든 친구를 초대해 실시간으로 함께 듣고 곡을 추가하세요.
+listen_together_landing_title	모임 시작하기
+listen_together_leave_subtitle	다른 참여자는 계속 듣습니다
+listen_together_listening	감상 중 · %2$lld명 중 %1$lld명
+listen_together_members_footer	모임은 최대 %1$lld대의 기기를 수용합니다. 참여자는 누구나 음악을 조작할 수 있습니다.
+listen_together_nickname_hint	이 모임에서 사용할 닉네임
+listen_together_official_server_dialog_message	이 모임은 BitChord 공식 서버에서 운영됩니다.\n\n공식 서버로 다시 전환하고 모임 %1$@에 참여할까요?
+listen_together_official_server_dialog_title	공식 서버로 전환할까요?
+listen_together_open	함께 듣기
+listen_together_open_count	함께 듣는 중 · %1$lld
+listen_together_party_size	모임 인원
+listen_together_party_size_subtitle	참여자 2~10명 선택
+listen_together_preview_footer	모임 참여자에게 내 이름과 프로필 사진이 표시됩니다.
+listen_together_scan_qr_subtitle	친구가 이 코드를 스캔하면 참여할 수 있습니다.
+listen_together_server_online	연결됨 · %1$lld ms
+listen_together_server_online_fallback	연결됨(기본 서버로 대체) · %1$lld ms
+listen_together_server_unknown	눌러서 확인
+listen_together_share_text	BitChord에서 함께 들어요 — 모임 코드 %1$@
+listen_together_sign_in_footer	함께 듣기에는 계정이 필요합니다. 모임 참여자가 서로를 확인할 수 있어야 하기 때문입니다.
+listen_together_status_all_offline	사용자 지정 서버와 기본 서버 모두 오프라인입니다
+listen_together_status_custom_fallback	사용자 지정 서버에 연결할 수 없음 · 기본 서버로 대체(%1$lld ms)
+listen_together_status_custom_online	사용자 지정 서버에 연결됨 · %1$lld ms
+listen_together_switch_failed	모임에 참여하지 못했습니다: %1$@.
+listen_together_switch_failed_stayed_in_party	모임에 참여하지 못했습니다: %1$@. 모임 %2$@에 계속 머뭅니다.
+listen_together_switched_to_default	기본 서버로 전환했습니다
+listen_together_syncing_clock	시계 측정 중…
+listen_together_top_bar_fallback	대체 서버 · %1$@
+listen_together_using_default	기본 서버 사용 중
+listenbrainz_token_description	감상 기록 연동을 사용하려면 ListenBrainz 사용자 토큰을 붙여넣으세요.
+listening_month_count	%1$lld개월 감상
+listening_shape	나의 감상 패턴
+log_copied_line_count	로그 복사됨 · %1$lld줄
+loudness_target_subtitle	낮은 값은 이어폰에, 높은 값은 차량이나 휴대폰 스피커에 적합합니다
+lyrics_debug_logs	가사 디버그 로그
+lyrics_debug_logs_subtitle	가사 패널에 실시간 API 요청과 스크레이퍼 활동을 표시합니다
+max_delay_subtitle	감상 기록 전송 최대 지연 시간(초)
+member_since	가입일
+member_since_value	%1$@부터 이용 중
+midday	정오
+midnight	자정
+min_song_duration	최소 곡 길이
+min_song_duration_subtitle	이보다 짧은 곡은 기록하지 않습니다
+minutes_listened	감상 시간(분)
+miscellaneous_footer	켜면 최근 사용한 앱 화면에서 앱을 닫을 때 음악 재생도 함께 중지됩니다.
+monthly_listeners	월간 청취자 %1$@명
+next_from	다음 곡 출처: %1$@
+next_in_queue	다음 대기 곡
+not_enough_listening	아직 감상 기록이 부족합니다
+not_enough_this_month	이번 달에 몇 곡 더 재생하면 Replay가 열립니다.
+open_battery_settings	배터리 설정 열기
+output_precision	출력 정밀도
+overridden	재정의됨
+party_queue_full	대기 목록이 가득 찼습니다(모임당 최대 %lld곡)
+pause_countdown	%1$@ 후 재생 일시정지
+paxsenix_api_key	PaxSenix API 키
+paxsenix_api_key_configured	PaxSenix API 키 — 설정됨
+paxsenix_api_key_missing	PaxSenix API 키 — 선택 사항, 설정되지 않음
+pinned_playlist_limit	플레이리스트은 %1$lld개까지만 고정할 수 있습니다
+pipeline_bit_depth	비트 심도
+pipeline_bit_exact	비트 정확
+pipeline_bitrate	비트레이트
+pipeline_buffers	버퍼
+pipeline_channels	채널
+pipeline_cutoff	차단 주파수
+pipeline_decoder	디코더
+pipeline_decoder_name	디코더 이름
+pipeline_device_name	기기 이름
+pipeline_eq_preset	EQ 프리셋
+pipeline_format	형식
+pipeline_io_rate	입출력 속도
+pipeline_loudness	음량
+pipeline_loudness_gain	게인
+pipeline_loudness_measured	측정값
+pipeline_output_api	출력 API
+pipeline_output_device	출력 기기
+pipeline_pcm_format	PCM 형식
+pipeline_quality	음질
+pipeline_resampler	리샘플러
+pipeline_sample_rate	샘플링 레이트
+pipeline_source	음원
+pipeline_stereo_expand	스테레오 확장
+pipeline_track_info	곡 정보
+pipeline_type	유형
+play_to_preview	곡을 재생하면 미리보기가 채워집니다.
+play_your_replay	나의 Replay 재생
+playing_radio	%1$@ 라디오 재생 중
+playlist_action	플레이리스트
+prefer_usb_dac	USB DAC 우선 사용
+quality_per_track	%1$@ · 곡당 %2$@
+radio_started	%1$@ 라디오를 시작했습니다
+refresh_rate	주사율
+replay_across	총
+replay_album_end	.
+replay_album_focus	앨범 하나
+replay_album_start	이번에 가장 오래 머문
+replay_artist_end	.
+replay_artist_focus	한 명의 아티스트
+replay_artist_start	이번 달 내내 반복해서 들은
+replay_empty_description	조금만 더 들으면 BitChord가 감상 기록으로 Replay를 만들어 드립니다.
+replay_genre_end	.
+replay_genre_focus	내 장르
+replay_genre_start	이번 달 취향을 이끈
+replay_genres_disabled_subtitle	이 설정이 꺼져 있으면 Replay 장르 차트가 숨겨집니다
+replay_genres_enabled_subtitle	Last.fm에서 아티스트의 장르를 조회합니다. 아티스트 이름만 전송됩니다.
+replay_habits_middle	·
+replay_habits_start	이번 달 들은 음악
+replay_intro_end	준비 완료!
+replay_intro_start	나의
+replay_minutes_end	동안 들었어요.
+replay_minutes_start	음악을
+replay_mostly_around	, 주로 %1$@경.
+replay_private_counting	이 기기의 감상 기록으로 비공개로 만들었습니다
+replay_share_card_description	주요 감상 기록을 담은 깔끔한 카드입니다.
+replay_share_summary_description	곡, 아티스트, 앨범, 장르, 감상 습관을 한눈에 보여주는 전체 이미지입니다.
+replay_songs_end	재생했어요.
+replay_songs_start	이번 달
+replay_summary_start	나의 감상 기록:
+scrobble_delay	감상 기록 전송 지연
+scrobble_delay_subtitle	곡이 얼마나 재생된 뒤 기록할지 설정합니다
+scrobble_primary_artist_only_subtitle	곡에 여러 아티스트가 표기된 경우 첫 번째 아티스트를 사용합니다
+scrobbling_footer	들은 곡을 Last.fm과 ListenBrainz에 기록합니다.
+scrobbling_paused_footer	Last.fm과 ListenBrainz는 이번 버전에서 일시 중지되었으며 나중에 다시 제공됩니다. 기존 연결은 그대로 저장됩니다.
+sharing_coming_soon	공유 기능은 곧 제공됩니다
+shelf_concerts	콘서트
+shelf_shorts	쇼츠
+shelf_similar_to	%1$@와(과) 비슷한 음악
+shelf_song_item	곡
+skip_silence_float_subtitle	32비트 부동소수점 출력에서는 사용할 수 없습니다
+smb_description	공유 음악 폴더(NAS 또는 SMB를 사용하는 Windows 공유)를 BitChord에 연결합니다.
+smb_disconnect	연결 해제
+smb_empty	SMB 공유에서 오디오 파일을 찾지 못했습니다. 음원 서비스에서 서버를 확인하세요.
+smb_folder_hint	공유 내 폴더, 예: media/music(선택 사항)
+smb_not_configured	음원 서비스에서 공유를 연결하세요
+smb_share_hint	공유 이름, 예: Music
+smb_subtitle	파일 공유의 음악
+smb_test_failed	연결할 수 없습니다: %1$@
+song_cache_large_subtitle	다운로드한 오디오를 최대 %1$@까지 저장 공간에 보관합니다. 여유 공간을 상당히 차지할 수 있습니다.
+song_cache_limit_subtitle	다운로드한 오디오를 저장 공간에 보관해 즉시 탐색하고 다시 재생할 수 있게 합니다
+song_will_play_next	곡을 다음에 재생합니다
+songs_will_play_next	%1$lld곡을 다음에 재생합니다
+sort_date_added_toggle	추가한 날짜
+source_already_added	%1$@(으)로 이미 추가됨
+source_skipped_by_quality	%1$@에서는 사용하지 않음 · 음질이 %2$@(으)로 설정됨
+source_unreachable	지금은 연결할 수 없습니다 · %1$@
+spotify_canvas_setup_description	Spotify Canvas를 사용하려면 Spotify sp_dc 쿠키를 입력하세요.
+spotify_canvas_setup_steps	1. 브라우저에서 open.spotify.com에 로그인합니다.\n2. 개발자 도구를 열고 Application, Cookies로 이동합니다.\n3. sp_dc 쿠키의 값을 복사합니다.\n4. 아래에 붙여넣습니다.
+status_dialog_message	활동이 켜져 있는 동안 계정에 표시되는 상태입니다.
+status_dnd_detail	빨간색 대시. 알림도 끕니다.
+status_idle_detail	주황색 초승달, 자리 비움으로 표시
+status_online_detail	초록색 점
+storage_required_read	로컬 오디오 파일을 읽으려면 저장소 권한이 필요합니다
+storage_required_save	곡을 저장하려면 저장소 접근 권한이 필요합니다
+system_equalizer_footer	BitChord 이퀄라이저 다음에 전체 오디오 세션에 적용됩니다. 둘 다 켜면 모두 적용됩니다.
+system_equalizer_subtitle	기기 자체의 이퀄라이저 패널
+tap_share_for_picture	공유를 눌러 이미지를 만드세요
+update_available	업데이트 가능: v%1$@
+update_available_body	bitchord %1$@을(를) 다운로드할 수 있습니다.
+update_downloading_body	bitchord %1$@ 다운로드 중…
+update_failed_body	bitchord %1$@을(를) 다운로드하지 못했습니다.
+update_ready_body	bitchord %1$@을(를) 설치할 준비가 되었습니다.
+upgrade_length_slack	곡 길이 허용 오차
+upgrade_length_slack_footer	허용 오차가 클수록 더 많은 음원이 일치하는 것으로 판단하고, 작을수록 엄격하게 판단합니다. 기본값은 3초입니다.
+upgrade_length_slack_subtitle	대체 스트림에 허용되는 최대 길이 차이
+upload_channel_description	WebDAV 서버로 전송 중인 곡
+upload_channel_name	업로드
+upload_notification_queued	%1$@ · %2$lld개 대기 중
+upload_notification_title	업로드 중
+uploading_song_count	%1$lld곡 업로드 중
+use_all_audio_folders_subtitle	폴더 제한을 없애고 기기 전체에서 음악을 검색합니다
+verb_competing	대회 참가 중
+verb_listening	음악 감상 중
+verb_playing	플레이 중
+verb_watching	시청 중
+version_cut_aligned	정렬됨
+version_cut_fetching	가져오는 중
+version_cut_measuring	분석 중
+version_cut_not_fetched	가져오지 않음
+webdav_conflict_message	덮어쓸까요, 아니면 두 파일을 모두 보관할까요?
+webdav_description	WebDAV 음악 폴더(Nextcloud Music 디렉터리 또는 WebDAV를 지원하는 서버)를 BitChord에 연결합니다.
+webdav_disconnect	연결 해제
+webdav_empty	WebDAV 서버에서 오디오 파일을 찾지 못했습니다. 설정에서 주소를 확인하세요.
+webdav_not_configured	음원 서비스에서 서버를 연결하세요
+webdav_subtitle	내 서버의 음악
+webdav_test_failed	연결할 수 없습니다: %1$@
+webdav_upload_summary	업로드 %1$lld개 · 건너뜀 %2$lld개 · 실패 %3$lld개
+when_you_listen_most	가장 많이 듣는 시간대
+who_can_see_it	공개 범위
+widget_artwork	앨범 아트
+widget_pill_description	좋아요, 셔플, 재생 컨트롤이 있는 곡 정보를 한 줄로 표시합니다.
+widget_pill_label	지금 재생 중 4×1
+widget_preview_artist	아티스트
+widget_preview_pill	곡 제목 - 아티스트
+widget_preview_title	곡 제목
+widget_square_description	재생 컨트롤이 있는 앨범 아트를 정사각형으로 표시합니다.
+widget_square_label	지금 재생 중 2×2
+widget_wide_description	곡 정보와 재생 컨트롤이 있는 앨범 아트를 가로 전체 너비로 표시합니다.
+widget_wide_label	지금 재생 중 4×2
+wifi_only_download_refusal	다운로드가 Wi-Fi로 제한되어 있습니다. 모바일 데이터를 사용하려면 설정에서 해제하세요.
+your_biggest_day	가장 많이 들은 날: %1$@
+youtube_request_rejected	YouTube Music에서 요청을 거부했습니다. 다시 로그인해 보세요.
+WG_FOOTER_ADVANCED	아직 검증되지 않은 BitChord 버전용: 음악 로더의 networkStackType을 0(URLSession)으로 강제합니다. 진단에서 Envoy 로더 작업이 보이는 경우가 아니면 꺼 두세요.
+WG_FORCE_STACK	URLSession 음악 로더 강제(미검증 버전)
+WG_SECTION_ADVANCED	고급
+replay_artist_count	%1$@명의 아티스트
+replay_hours_across	%1$@시간,
+replay_minutes_value	%1$@분
+replay_play_count	%1$@회 재생
+replay_song_count	%1$@곡
+listen_together_custom_server_dialog_title	사용자 지정 서버의 모임에 참여할까요?
+smb_server_hint	nas.local 또는 192.168.1.10:4445
+spdc_token	sp_dc 토큰
+Explicit	청소년 유해 표현 포함

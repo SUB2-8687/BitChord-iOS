@@ -57,8 +57,8 @@ enum PlayerNerdStatsText {
         case .youtube: return "YouTube"
         case .jioSaavn: return "JioSaavn"
         case .addon, .module: return stream.sourceConfigId ?? stream.origin.rawValue
-        case .local: return "Local Storage"
-        case .networkShare: return stream.url.host() ?? "Network"
+        case .local: return NSLocalizedString("source_local_storage", tableName: "Localizable", bundle: LanguageBundle.current, value: "Local Storage", comment: "")
+        case .networkShare: return stream.url.host() ?? NSLocalizedString("source_network", tableName: "Localizable", bundle: LanguageBundle.current, value: "Network", comment: "")
         }
     }
 

@@ -11,11 +11,20 @@ enum LanguageBundle {
     /// UserDefaults key holding the chosen localization identifier ("he", "zh-Hans"...); absent = follow the system.
     static let overrideKey = "app_language_override"
 
-    /// Every localization the app ships, in the order the language picker lists them.
-    static let supported = ["en", "ko", "de", "es", "fr", "he", "hi", "id", "it", "ja", "pl", "pt", "ru", "th", "tr", "vi", "zh-Hans"]
+    /// Every localization the app can carry, in the order the language picker lists them.
+    static let candidates = ["en", "ko", "de", "es", "fr", "he", "hi", "id", "it", "ja", "pl", "pt", "ru", "th", "tr", "vi", "zh-Hans"]
+
+    /// The candidates whose `.lproj` is actually in the app bundle. The sideload IPA keeps only
+    /// English and Korean (`scripts/strip-language-packs.sh`), so the picker lists just those two
+    /// there, while a development or test build that still carries every language lists them all.
+    static let supported: [String] = {
+        let shipped = candidates.filter { Bundle.main.path(forResource: $0, ofType: "lproj") != nil }
+        return shipped.isEmpty ? ["en"] : shipped
+    }()
 
     static var override: String? {
-        get { UserDefaults.standard.string(forKey: overrideKey) }
+        // A language saved before its pack was removed is ignored rather than half-applied.
+        get { UserDefaults.standard.string(forKey: overrideKey).flatMap { supported.contains($0) ? $0 : nil } }
         set {
             if let newValue, supported.contains(newValue) {
                 UserDefaults.standard.set(newValue, forKey: overrideKey)

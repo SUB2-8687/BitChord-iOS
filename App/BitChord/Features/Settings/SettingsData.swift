@@ -135,12 +135,16 @@ struct SettingsBackup {
     }
 
     /// Backup.kt's reasons, which Android never localised either (they are `error()` messages).
+    private static func localized(_ key: String, _ english: String) -> String {
+        NSLocalizedString(key, tableName: "Localizable", bundle: LanguageBundle.current, value: english, comment: "")
+    }
+
     private static func message(of error: Error) -> String {
         if let backup = error as? ReplayBackupError {
             switch backup {
-            case .notABitChordBackup: return "That doesn't look like a BitChord backup"
-            case .foreignBackup: return "That backup is from another app"
-            case .newerSchema: return "That backup was written by a newer version of BitChord"
+            case .notABitChordBackup: return localized("backup_not_bitchord", "That doesn't look like a BitChord backup")
+            case .foreignBackup: return localized("backup_foreign", "That backup is from another app")
+            case .newerSchema: return localized("backup_newer_schema", "That backup was written by a newer version of BitChord")
             }
         }
         let text = error.localizedDescription

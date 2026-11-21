@@ -12,6 +12,40 @@ python3 scripts/apply-korean.py
 MIN_IOS=17.0 SDK_NAME=iphoneos bash WireGuard/build-ios.sh
 
 DERIVED=.derived-release
+
+# ONNX Runtime (Automix's beat/vocal models) comes from a Swift package on GitHub. If that source
+# cannot be reached, build without it instead of failing: Automix keeps its DSP analysis.
+#   BITCHORD_ONNX=on|off|auto (default auto)   BITCHORD_ONNX_URL=<mirror or fork of the package>
+export BITCHORD_ONNX_URL=${BITCHORD_ONNX_URL:-https://github.com/microsoft/onnxruntime-swift-package-manager}
+resolve_packages() {
+  xcodebuild -resolvePackageDependencies -workspace BitChord.xcworkspace -scheme BitChord \
+    -derivedDataPath "$DERIVED" -quiet
+}
+if [ "${BITCHORD_ONNX:-auto}" = auto ]; then
+  export BITCHORD_ONNX=off
+  for attempt in 1 2 3; do
+    if GIT_TERMINAL_PROMPT=0 git ls-remote --tags "$BITCHORD_ONNX_URL" refs/tags/1.24.2 2>/dev/null | grep -q 'refs/tags/1.24.2'; then
+      export BITCHORD_ONNX=on; break
+    fi
+    echo "ONNX Runtime package source unreachable (attempt $attempt of 3)" >&2
+    sleep $((attempt * 5))
+  done
+fi
+if [ "$BITCHORD_ONNX" = on ]; then
+  resolved=0
+  for attempt in 1 2 3; do
+    if resolve_packages; then resolved=1; break; fi
+    echo "Package resolution failed (attempt $attempt of 3)" >&2
+    sleep $((attempt * 10))
+  done
+  if [ "$resolved" = 0 ]; then export BITCHORD_ONNX=off; fi
+fi
+if [ "$BITCHORD_ONNX" = off ]; then
+  echo "::warning::Building WITHOUT ONNX Runtime; Automix uses its DSP estimate only"
+  echo "Building without ONNX Runtime (BITCHORD_ONNX=off)" >&2
+fi
+echo "ONNX Runtime: $BITCHORD_ONNX ($BITCHORD_ONNX_URL)"
+
 xcodebuild build -workspace BitChord.xcworkspace -scheme BitChord -configuration Release \
   -destination 'generic/platform=iOS' -derivedDataPath "$DERIVED" -jobs "${JOBS:-3}" -quiet \
   CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=""
@@ -26,6 +60,9 @@ trap 'rm -rf "$STAGE"' EXIT
 mkdir -p "$STAGE/Payload"
 cp -R "$APP" "$STAGE/Payload/"
 STAGED="$STAGE/Payload/BitChord.app"
+
+# Keep only English and Korean resources in the packaged app.
+bash scripts/strip-language-packs.sh "$STAGED"
 
 # A prior build-for-testing can leave a test bundle in the shared product directory.
 # It must never ship in a sideload IPA, even when a normal build did not clean it up.

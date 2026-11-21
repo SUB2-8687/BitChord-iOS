@@ -3,19 +3,19 @@
   "strings" : {
     "offline_backup" : {
       "comment" : "Library card and page title: songs already whole on the device, playable with no connection.",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Offline backup" } } }
+      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Offline backup" } }, "ko" : { "stringUnit" : { "state" : "translated", "value" : "오프라인 백업" } } }
     },
     "offline_backup_subtitle" : {
       "comment" : "Subtitle of the Offline backup card.",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Plays without a connection" } } }
+      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Plays without a connection" } }, "ko" : { "stringUnit" : { "state" : "translated", "value" : "연결 없이 재생됩니다" } } }
     },
     "offline_backup_empty" : {
       "comment" : "The Offline backup page with nothing in it.",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Songs you play are kept here, so they still play without a connection." } } }
+      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Songs you play are kept here, so they still play without a connection." } }, "ko" : { "stringUnit" : { "state" : "translated", "value" : "재생한 곡이 이곳에 보관되어 연결이 없어도 재생할 수 있습니다." } } }
     },
     "no_downloaded_tracks" : {
       "comment" : "The Downloads folder with nothing in it. Android hard-coded this in MainViewModel's openDetail (\"No downloaded tracks\").",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "No downloaded tracks" } } }
+      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "No downloaded tracks" } }, "ko" : { "stringUnit" : { "state" : "translated", "value" : "다운로드한 곡 없음" } } }
     }
   },
   "version" : "1.0"

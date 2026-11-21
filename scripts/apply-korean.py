@@ -29,6 +29,11 @@ new={
  'proxy_title':('Proxy','프록시'),
  'proxy_subtitle':('In-app WireGuard, HTTP, HTTPS or SOCKS5','앱 내부 WireGuard · HTTP · HTTPS · SOCKS5'),
  'show_lyrics_provider':('Show lyrics source and Change button','가사 출처와 변경 버튼 표시'),
+ 'backup_not_bitchord':("That doesn't look like a BitChord backup",'BitChord 백업 파일이 아닙니다'),
+ 'backup_foreign':('That backup is from another app','다른 앱에서 만든 백업입니다'),
+ 'backup_newer_schema':('That backup was written by a newer version of BitChord','더 최신 버전의 BitChord에서 만든 백업이라 가져올 수 없습니다'),
+ 'source_local_storage':('Local Storage','로컬 저장소'),
+ 'source_network':('Network','네트워크'),
  'show_lyrics_provider_subtitle':('Show the provider caption above the player controls','플레이어에 가사 제공 서비스와 변경 버튼을 표시합니다'),
 }
 # The native controller also follows the in-app language selection.
@@ -46,5 +51,31 @@ for key,(en,ko_default) in new.items():
     value=ko.get(key,ko_default)
     if fmt(en)!=fmt(value):raise ValueError('Format mismatch in '+key)
     loc['ko']=unit(value)
+# Reviewed long-tail translations. Escapes are kept as written, exactly like the English entries. Applied last so they also
+# cover keys created above and entries the first pass skipped; a format mismatch is a hard error.
+for line in (root/'scripts/localization/ko-review.tsv').read_text(encoding='utf-8').splitlines():
+    if not line.strip() or line.startswith('#'):continue
+    key,value=line.split('\t',1)
+    if key not in strings:raise ValueError('Unknown review key '+key)
+    source=strings[key]['localizations'].get('en',unit(key))
+    sub=source.get('substitutions',{}).get('count')
+    plural=source.get('variations',{}).get('plural')
+    if sub:
+        en=next(iter(sub['variations']['plural'].values()))['stringUnit']['value']
+    elif plural:
+        en=next(iter(plural.values()))['stringUnit']['value']
+    else:
+        en=source['stringUnit']['value']
+    if fmt(en)!=fmt(value):raise ValueError('Format mismatch in '+key)
+    if sub:
+        entry=copy.deepcopy(source);entry['substitutions']['count']['variations']['plural']={'other':unit(value)}
+        strings[key]['localizations']['ko']=entry
+    elif plural:strings[key]['localizations']['ko']={'variations':{'plural':{'other':unit(value)}}}
+    else:strings[key]['localizations']['ko']=unit(value)
+# The sideload build ships English and Korean only: drop every other language from the catalog so
+# no other .lproj is generated (strip-language-packs.sh removes any that third-party bundles carry).
+for entry in strings.values():
+    loc=entry.get('localizations')
+    if loc:entry['localizations']={l:v for l,v in loc.items() if l in ('en','ko')}
 j['strings']=strings;p.write_text(json.dumps(j,ensure_ascii=False,indent=2,separators=(',', ' : '))+'\n')
-print(f'{translated} reviewed Korean entries applied; {len(strings)} entries available including English fallbacks. Format-sensitive entries left unchanged: {skipped}')
+print(f'{translated} reviewed Korean entries applied; {len(strings)} entries available including English fallbacks; languages kept: en, ko. Skipped by the first pass (fixed by ko-review.tsv): {skipped}')

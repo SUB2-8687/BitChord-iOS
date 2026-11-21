@@ -27,7 +27,11 @@ for extension in (app / 'PlugIns').glob('*.appex'):
     for key in ('CFBundleShortVersionString', 'CFBundleVersion'):
         if values.get(key) != main.get(key):
             raise SystemExit(f'{extension.name}: {key} does not match the app')
-print(f'IPA version verified: {main["CFBundleShortVersionString"]} ({main["CFBundleVersion"]}), no test bundles')
+allowed = {'Base', 'en', 'ko'}
+extra = sorted({str(p.relative_to(app)) for p in app.rglob('*.lproj') if p.stem.split('-')[0] not in allowed})
+if extra:
+    raise SystemExit('language packs other than en/ko must not ship: ' + ', '.join(extra[:20]))
+print(f'IPA version verified: {main["CFBundleShortVersionString"]} ({main["CFBundleVersion"]}), no test bundles, only en/ko language packs')
 PYVERIFY
 
 # --deep covers the extensions and frameworks; --strict rejects a bundle changed after signing.

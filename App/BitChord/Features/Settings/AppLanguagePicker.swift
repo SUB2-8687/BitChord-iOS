@@ -15,7 +15,9 @@ struct AppLanguage: Hashable, Identifiable {
 
     /// Android's `SUPPORTED_LANGUAGES`, in its order. Android's "zh" is the Simplified Chinese
     /// catalog, `zh-Hans` on iOS.
-    static let all: [AppLanguage] = [
+    static let all: [AppLanguage] = allCandidates.filter { LanguageBundle.supported.contains($0.code) }
+
+    private static let allCandidates: [AppLanguage] = [
         AppLanguage(code: "en", name: { L10n.english }),
         AppLanguage(code: "ko", name: { "한국어" }),
         AppLanguage(code: "es", name: { L10n.spanish }),

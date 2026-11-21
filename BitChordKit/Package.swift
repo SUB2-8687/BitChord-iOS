@@ -1,4 +1,5 @@
 // swift-tools-version: 5.10
+import Foundation
 import PackageDescription
 
 // Every non-UI piece of the BitChord iOS port lives here, one module per
@@ -30,7 +31,24 @@ let core: Target.Dependency = "BitChordCore"
 // ONNX Runtime runs Automix's two models (Beat This! beats, open-unmix vocals).
 // A static xcframework with iOS, iOS Simulator and macOS slices, so the package
 // tests still run on the Mac host.
-let onnxRuntime: Target.Dependency = .product(name: "onnxruntime", package: "onnxruntime-swift-package-manager")
+//
+// The runtime is optional at build time, so a source outage can never block a build:
+//   BITCHORD_ONNX=off       leave ONNX Runtime out. Automix's beat and vocal models then answer
+//                           nil (every use is behind `canImport(OnnxRuntimeBindings)`) and the
+//                           built-in DSP estimate is used instead; everything else is unchanged.
+//   BITCHORD_ONNX_URL=<url> fetch the same package (tag 1.24.2) from a mirror or a fork of
+//                           microsoft/onnxruntime-swift-package-manager instead.
+// scripts/make-ipa.sh sets both automatically when the default source cannot be reached.
+let environment = ProcessInfo.processInfo.environment
+let onnxEnabled = environment["BITCHORD_ONNX"] != "off"
+let onnxURL = environment["BITCHORD_ONNX_URL"].flatMap { $0.isEmpty ? nil : $0 }
+    ?? "https://github.com/microsoft/onnxruntime-swift-package-manager"
+let onnxPackageName = onnxURL.split(separator: "/").last
+    .map { String($0).replacingOccurrences(of: ".git", with: "") } ?? "onnxruntime-swift-package-manager"
+let onnxRuntime: [Target.Dependency] = onnxEnabled ? [.product(name: "onnxruntime", package: onnxPackageName)] : []
+let onnxPackages: [Package.Dependency] = onnxEnabled ? [.package(url: onnxURL, exact: "1.24.2")] : []
+
+let automixDependencies: [Target.Dependency] = [core, "AudioDSP", "AutomixAnalyzer"] + onnxRuntime
 
 let modules: [(name: String, dependencies: [Target.Dependency])] = [
     ("BitChordCore", []),
@@ -41,7 +59,7 @@ let modules: [(name: String, dependencies: [Target.Dependency])] = [
     ("AudioCache", [core, "StreamResolution"]),
     ("PlaybackPolicy", [core]),
     ("Playback", [core, "PlaybackQueue", "AudioDSP", "AudioCache", "PlaybackPolicy"]),
-    ("Automix", [core, "AudioDSP", "AutomixAnalyzer", onnxRuntime]),
+    ("Automix", automixDependencies),
     ("Lyrics", [core]),
     ("Downloads", [core]),
     ("Sources", [core]),
@@ -74,6 +92,10 @@ let moduleResources: [String: [Resource]] = [
     "Automix": [.copy("Models")],
 ]
 
+let packageDependencies: [Package.Dependency] = [
+    .package(url: "https://github.com/amosavian/AMSMB2.git", from: "4.0.0"),
+] + onnxPackages
+
 let package = Package(
     name: "BitChordKit",
     defaultLocalization: "en",
@@ -83,10 +105,7 @@ let package = Package(
     ],
     // NetworkLibrary streams SMB shares through AMSMB2 (LGPL-2.1, wraps libsmb2);
     // every other module stays dependency-free.
-    dependencies: [
-        .package(url: "https://github.com/amosavian/AMSMB2.git", from: "4.0.0"),
-        .package(url: "https://github.com/microsoft/onnxruntime-swift-package-manager", exact: "1.24.2"),
-    ],
+    dependencies: packageDependencies,
     targets: modules.map { module in
         .target(name: module.name, dependencies: module.dependencies, resources: moduleResources[module.name])
     } + [
